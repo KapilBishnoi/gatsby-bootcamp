@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
         query {
-            allContentfulBlogPost {
+            allContentfulBlogPost(filter: { node_locale: { eq: "en-US" } }) {
                 edges {
                     node {
                         slug
